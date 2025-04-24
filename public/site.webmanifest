@@ -1,0 +1,20 @@
+{
+  "name": "Mohamed amine Mounir Portfolio",
+  "icons": [
+    {
+      "src": "./CodeSets.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./CodeSets.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

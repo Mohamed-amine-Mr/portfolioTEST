@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicon links with modern approach -->
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" href="./CodeSets.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./CodeSets-180x180.png" />
+    <link
+      rel="manifest"
+      href="./site.webmanifest"
+      crossorigin="use-credentials"
+    />
+    <meta name="theme-color" content="#6366f1" />
+
+    <!-- Critical CSS -->
+    <style>
+      /* Simple fade-in animation to prevent FOUC */
+      body {
+        opacity: 0;
+        animation: fadeIn 0.3s ease-in forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Basic layout to prevent layout shift */
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+
+    <!-- Preload important resources -->
+    <link rel="preload" href="/src/main.jsx" as="script" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- SEO and Social Media Meta Tags -->
+    <meta
+      name="description"
+      content="Mohamed Amine Mounir - Front-end developer specializing in React, TypeScript, and modern web applications. View my portfolio of professional projects."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="Mohamed Amine Mounir | Front-end Developer"
+    />
+    <meta
+      property="og:description"
+      content="Professional portfolio showcasing my front-end development projects"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourportfolio.com" />
+    <meta
+      property="og:image"
+      content="https://yourportfolio.com/social-preview.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>Mohamed Amine Mounir | Front-end Developer</title>
+
+    <!-- Non-blocking analytics (if needed) -->
+    <script defer src="/analytics.js"></script>
+  </head>
+  <body class="font-sans">
+    <div id="root"></div>
+
+    <!-- Modern script loading with fallback -->
+    <script type="module" src="/src/main.jsx"></script>
+    <script nomodule src="/src/legacy.js" defer></script>
+
+    <!-- Load web fonts without blocking render -->
+    <script>
+      /*! Load CSS. [c]2017 Filament Group, Inc. MIT License */
+      !(function (e) {
+        "use strict";
+        var n = function (n, t, o) {
+          var i = e.document.createElement("link"),
+            d = t || e.document.getElementsByTagName("script")[0];
+          (i.rel = "stylesheet"),
+            (i.href = n),
+            (i.media = "only x"),
+            d.parentNode.insertBefore(i, d),
+            setTimeout(function () {
+              i.media = o || "all";
+            });
+        };
+        e.loadCSS = n;
+      })(this);
+      loadCSS(
+        "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      );
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) =>
+              console.log("SW registered: ", registration)
+            )
+            .catch((registrationError) =>
+              console.log("SW registration failed: ", registrationError)
+            );
+        });
+      }
+    </script>
+  </body>
+</html>
