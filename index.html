@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <!-- Preconnect to external domains -->
+
+    <!-- Preconnect and DNS Prefetch for external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
     <!-- Favicon links with modern approach -->
     <link rel="icon" href="./favicon.ico" sizes="any" />
@@ -15,7 +18,17 @@
       href="./site.webmanifest"
       crossorigin="use-credentials"
     />
-    <meta name="theme-color" content="#6366f1" />
+    <!-- Theme color with dark mode support -->
+    <meta
+      name="theme-color"
+      content="#f9fafb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111827"
+      media="(prefers-color-scheme: dark)"
+    />
 
     <!-- Critical CSS -->
     <style>
@@ -30,25 +43,34 @@
         }
       }
 
-      /* Basic layout to prevent layout shift */
+      /* Basic layout to prevent layout shift with aspect ratio */
       #root {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        aspect-ratio: auto; /* Prevent CLS */
+      }
+
+      /* Optimize font rendering */
+      body {
+        font-family: "Poppins", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
     </style>
 
     <!-- Preload important resources -->
     <link rel="preload" href="/src/main.jsx" as="script" />
+    <link rel="preload" href="/src/assets/home.png" as="image" />
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@500;700&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@500;700&display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -56,37 +78,65 @@
     <!-- SEO and Social Media Meta Tags -->
     <meta
       name="description"
-      content="Mohamed Amine Mounir - Front-end developer specializing in React, TypeScript, and modern web applications. View my portfolio of professional projects."
+      content="Mohamed Amine Mounir - Développeur front-end spécialisé en React, TypeScript et applications web modernes. Découvrez mon portfolio de projets professionnels."
     />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
     />
     <meta name="robots" content="index, follow" />
     <meta
+      name="keywords"
+      content="front-end developer, React, TypeScript, portfolio, web development, MounirWeb"
+    />
+    <meta name="author" content="Mohamed Amine Mounir" />
+    <meta
       property="og:title"
-      content="Mohamed Amine Mounir | Front-end Developer"
+      content="Mohamed Amine Mounir | Développeur Front-end"
     />
     <meta
       property="og:description"
-      content="Professional portfolio showcasing my front-end development projects"
+      content="Portfolio professionnel présentant mes projets de développement front-end."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourportfolio.com" />
+    <meta property="og:url" content="https://mounirweb.com" />
     <meta
       property="og:image"
-      content="https://yourportfolio.com/social-preview.jpg"
+      content="https://mounirweb.com/social-preview.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@yourTwitterHandle" />
 
-    <!-- Performance optimizations -->
+    <!-- PWA Enhancements -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Security Headers -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://mounirweb.com https://via.placeholder.com; connect-src 'self';"
+    />
 
-    <title>Mohamed Amine Mounir | Front-end Developer</title>
+    <title>Mohamed Amine Mounir | Développeur Front-end</title>
 
     <!-- Non-blocking analytics (if needed) -->
     <script defer src="/analytics.js"></script>
+
+    <!-- Polyfills for older browsers -->
+    <script>
+      // IntersectionObserver polyfill for older browsers
+      if (!("IntersectionObserver" in window)) {
+        const script = document.createElement("script");
+        script.src =
+          "https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver";
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    </script>
   </head>
   <body class="font-sans">
     <div id="root"></div>
@@ -95,27 +145,20 @@
     <script type="module" src="/src/main.jsx"></script>
     <script nomodule src="/src/legacy.js" defer></script>
 
-    <!-- Load web fonts without blocking render -->
+    <!-- Load web fonts using Web Font Loader -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      async
+    ></script>
     <script>
-      /*! Load CSS. [c]2017 Filament Group, Inc. MIT License */
-      !(function (e) {
-        "use strict";
-        var n = function (n, t, o) {
-          var i = e.document.createElement("link"),
-            d = t || e.document.getElementsByTagName("script")[0];
-          (i.rel = "stylesheet"),
-            (i.href = n),
-            (i.media = "only x"),
-            d.parentNode.insertBefore(i, d),
-            setTimeout(function () {
-              i.media = o || "all";
-            });
-        };
-        e.loadCSS = n;
-      })(this);
-      loadCSS(
-        "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      );
+      WebFont.load({
+        google: {
+          families: ["Poppins:300,400,500,600,700", "Montserrat:500,700"],
+        },
+        active: function () {
+          sessionStorage.fontsLoaded = true;
+        },
+      });
     </script>
 
     <!-- Service Worker Registration -->
