@@ -18,6 +18,7 @@ import About from "../About/About";
 import Projects from "../Projects/projects";
 import Reviews from "../reviews/Reviews";
 import Contact from "../Contact/Contact";
+import WhyHireMe from "../whyChoseMe/WhyHireMe.jsx";
 
 const Hero = () => {
   const scrollRef = useRef(null);

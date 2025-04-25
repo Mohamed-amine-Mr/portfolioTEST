@@ -351,54 +351,6 @@ const Projects = () => {
         </AnimatePresence>
 
         {/* Trust Indicators */}
-        <motion.div className="mt-12" variants={projectVariants}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100 dark:border-gray-700"
-            >
-              <div className="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-6">
-                <Star className="w-8 h-8 text-yellow-500" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                10+ Projets Réussis
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400 font-medium">
-                Des clients satisfaits à travers le monde
-              </p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100 dark:border-gray-700"
-            >
-              <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6">
-                <Award className="w-8 h-8 text-blue-500" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Designs Modernes & Responsifs
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400 font-medium">
-                Sites adaptés à tous les appareils
-              </p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100 dark:border-gray-700"
-            >
-              <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
-                <ShieldCheck className="w-8 h-8 text-green-500" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Support 24/7 Garanti
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400 font-medium">
-                Assistance continue pour votre tranquillité
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
 
         {/* CTA */}
         <motion.div className="mt-12 text-center" variants={projectVariants}>

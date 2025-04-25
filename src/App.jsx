@@ -164,15 +164,15 @@ const App = () => {
             element={
               <motion.section
                 id="about"
-                // variants={sectionVariants}
-                // initial="hidden"
-                // whileInView="visible"
-                // viewport={{ once: true, amount: 0.3 }}
-                // style={{ y: yOffset }}
+                variants={sectionVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                style={{ y: yOffset }}
               >
-                {/* <Suspense fallback={null}> */}
-                <About />
-                {/* </Suspense> */}
+                <Suspense fallback={null}>
+                  <About />
+                </Suspense>
               </motion.section>
             }
           />
@@ -218,8 +218,8 @@ const App = () => {
                 variants={sectionVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                style={{ y: yOffset }}
+                // viewport={{ once: true, amount: 0.3 }}
+                // style={{ y: yOffset }}
               >
                 <Suspense fallback={null}>
                   <Contact />
@@ -235,7 +235,7 @@ const App = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        style={{ y: yOffset }}
+        // style={{ y: yOffset }}
       >
         <Suspense fallback={null}>
           <Footer />
