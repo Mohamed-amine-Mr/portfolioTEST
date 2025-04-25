@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,9 @@ const Contact = () => {
     email: "",
     project: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,10 +19,40 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Replace with actual form submission logic (e.g., API call)
-    console.log("Form submitted:", formData);
-    alert("Merci pour votre demande ! Nous vous contacterons bientôt.");
-    setFormData({ name: "", email: "", project: "" });
+    setIsSubmitting(true);
+    setSubmitMessage("");
+    setIsError(false);
+
+    // EmailJS parameters
+    const serviceId = "service_r696e4c"; // Your Service ID
+    const templateId = "template_8jq1x9s"; // Your Template ID
+    const publicKey = "GyrTR5BC2ZtqvVEMV"; // Your Public Key
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      project: formData.project,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("Email sent successfully:", response);
+        setSubmitMessage(
+          "Merci pour votre demande ! Nous vous contacterons bientôt."
+        );
+        setFormData({ name: "", email: "", project: "" });
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        setSubmitMessage(
+          "Une erreur s'est produite. Veuillez réessayer plus tard."
+        );
+        setIsError(true);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const containerVariants = {
@@ -125,12 +159,29 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all transform"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                disabled={isSubmitting}
+                className={`w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all transform ${
+                  isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
               >
-                Envoyez votre demande maintenant !
+                {isSubmitting
+                  ? "Envoi en cours..."
+                  : "Envoyez votre demande maintenant !"}
               </motion.button>
+
+              {submitMessage && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className={`text-center mt-4 ${
+                    isError ? "text-red-500" : "text-green-500"
+                  }`}
+                >
+                  {submitMessage}
+                </motion.p>
+              )}
             </form>
           </motion.div>
 
@@ -144,18 +195,18 @@ const Contact = () => {
             </h3>
             <div className="space-y-4">
               <motion.a
-                href="tel:+212600000000"
+                href="tel:+212660446735"
                 className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 whileHover={{ x: 5 }}
               >
                 <div className="bg-green-500 text-white rounded-full p-2">
                   <Phone className="w-5 h-5" />
                 </div>
-                <span>+212 600 000 000</span>
+                <span>+212660446735</span>
               </motion.a>
 
               <motion.a
-                href="https://wa.me/+212600000000"
+                href="https://wa.me/+212660446735"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -175,14 +226,14 @@ const Contact = () => {
               </motion.a>
 
               <motion.a
-                href="mailto:contact@mounirweb.com"
+                href="mailto:contactmounirweb@gmail.com"
                 className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 whileHover={{ x: 5 }}
               >
                 <div className="bg-red-500 text-white rounded-full p-2">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span>contact@mounirweb.com</span>
+                <span>contactmounirweb@gmail.com</span>
               </motion.a>
             </div>
           </motion.div>

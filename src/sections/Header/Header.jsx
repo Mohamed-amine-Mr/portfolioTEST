@@ -1,182 +1,3 @@
-// // components/header/Header.tsx
-// import { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
-// import { Menu, X, Terminal, Github, Linkedin } from "lucide-react";
-// import { useDarkMode } from "../hooks/useDarkMode";
-// import NavLink from "./NavLink";
-// import SocialLinks from "./SocialLinks";
-// import ThemeToggle from "./ThemeToggle";
-// import MobileMenu from "./MobielMenu";
-// import AnnouncementBanner from "./AnnouncementBanner";
-// import logo from "./logoTransparent.png";
-// // Define interfaces for our types
-// interface NavLink {
-//   name: string;
-//   href: string;
-//   dropdownItems?: Array<{ name: string; href: string }>;
-// }
-
-// interface SocialLink {
-//   icon: React.ReactNode;
-//   href: string;
-//   label: string;
-// }
-
-// const Header: React.FC = () => {
-//   // Navigation links configuration
-//   const navLinks: NavLink[] = [
-//     { name: "Home", href: "#home" },
-//     { name: "About", href: "#about" },
-//     { name: "Projects", href: "#projects" },
-//     { name: "Contact", href: "#contact" },
-//   ];
-
-//   // Social links configuration
-//   const socialLinks: SocialLink[] = [
-//     {
-//       icon: <Linkedin className="w-5 h-5" />,
-//       href: "https://www.linkedin.com/in/mohamed-amine-mounir-6a125732b/",
-//       label: "LinkedIn",
-//     },
-//     {
-//       icon: <Github className="w-5 h-5" />,
-//       href: "https://github.com/Mohamed-amine-Mr",
-//       label: "Github",
-//     },
-//   ];
-
-//   // State management
-//   const [isOpen, setIsOpen] = useState<boolean>(false);
-//   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-//   const [activeSection, setActiveSection] = useState<string>("home");
-//   const [isDarkMode, setIsDarkMode] = useDarkMode();
-//   const [expandedDropdown, setExpandedDropdown] = useState<string | null>(null);
-
-//   // Handle scroll effects
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 20);
-
-//       const sections = ["home", "about", "projects", "contact"];
-//       const current = sections.find((section) => {
-//         const element = document.getElementById(section);
-//         if (element) {
-//           const bounds = element.getBoundingClientRect();
-//           return bounds.top <= 100 && bounds.bottom >= 100;
-//         }
-//         return false;
-//       });
-
-//       if (current) {
-//         setActiveSection(current);
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   // Handle mobile menu click
-//   const handleMobileNavClick = (): void => {
-//     setIsOpen(false);
-//     setExpandedDropdown(null);
-//   };
-
-//   return (
-//     <motion.nav
-//       initial={{ opacity: 0, y: -20 }}
-//       animate={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.6 }}
-//       className={`fixed w-full z-50 transition-all duration-300
-//         ${
-//           isScrolled
-//             ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md"
-//             : "bg-transparent dark:bg-transparent"
-//         }`}
-//     >
-//       <AnnouncementBanner />
-
-//       <div className="max-w-6xl mx-auto px-4">
-//         <div className="flex items-center justify-between h-16">
-//           {/* Logo */}
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ delay: 0.3 }}
-//             className="flex-shrink-0 flex items-center space-x-2"
-//           >
-//             <img src={logo} className="h-24" alt="mounirWeb" />
-//           </motion.div>
-
-//           {/* Desktop Navigation */}
-//           <div className="hidden md:flex items-center space-x-4">
-//             {navLinks.map((link) => (
-//               <NavLink
-//                 key={link.name}
-//                 {...link}
-//                 isActive={activeSection === link.name.toLowerCase()}
-//               />
-//             ))}
-
-//             <SocialLinks
-//               links={socialLinks}
-//               className="border-l border-gray-200 dark:border-gray-700 pl-4 ml-4"
-//             />
-
-//             <ThemeToggle
-//               isDarkMode={isDarkMode}
-//               setIsDarkMode={setIsDarkMode}
-//             />
-
-//             <a
-//               href="#contact"
-//               className="bg-indigo-600 dark:bg-indigo-500 text-white px-4 py-2 rounded-lg
-//                 hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors
-//                 flex items-center space-x-2"
-//             >
-//               <Terminal className="w-4 h-4" />
-//               <span>Embauchez-moi</span>
-//             </a>
-//           </div>
-
-//           {/* Mobile menu button */}
-//           <div className="md:hidden flex items-center space-x-2">
-//             <ThemeToggle
-//               isDarkMode={isDarkMode}
-//               setIsDarkMode={setIsDarkMode}
-//             />
-//             <button
-//               onClick={() => setIsOpen(!isOpen)}
-//               className="p-2 rounded-md text-gray-600 dark:text-gray-300
-//                 hover:text-indigo-600 dark:hover:text-indigo-400
-//                 hover:bg-gray-100 dark:hover:bg-gray-800"
-//               aria-label="Toggle menu"
-//             >
-//               {isOpen ? (
-//                 <X className="w-6 h-6" />
-//               ) : (
-//                 <Menu className="w-6 h-6" />
-//               )}
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       <MobileMenu
-//         isOpen={isOpen}
-//         navLinks={navLinks}
-//         activeSection={activeSection}
-//         expandedDropdown={expandedDropdown}
-//         setExpandedDropdown={setExpandedDropdown}
-//         handleMobileNavClick={handleMobileNavClick}
-//         socialLinks={socialLinks}
-//       />
-//     </motion.nav>
-//   );
-// };
-
-// export default Header;
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Terminal, Linkedin, Github, ChevronDown } from "lucide-react";
@@ -207,11 +28,11 @@ const Header = () => {
       href: "https://www.linkedin.com/in/mohamed-amine-mounir-6a125732b/",
       label: "LinkedIn",
     },
-    {
-      icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/yourusername", // Replace with your GitHub URL
-      label: "GitHub",
-    },
+    // {
+    //   icon: <Github className="w-5 h-5" />,
+    //   href: "https://github.com/yourusername", // Replace with your GitHub URL
+    //   label: "GitHub",
+    // },
   ];
 
   useEffect(() => {
@@ -369,7 +190,7 @@ const Header = () => {
 
             {/* Secondary CTA */}
             <motion.a
-              href="#projects"
+              href="#services"
               className="px-4 py-2 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

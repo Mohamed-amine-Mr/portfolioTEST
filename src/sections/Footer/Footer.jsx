@@ -81,10 +81,10 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-green-500" />
                 <a
-                  href="tel:+212600000000"
+                  href="tel:+212660446735"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  +212 600 000 000
+                  +212660446735
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -97,7 +97,7 @@ const Footer = () => {
                   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.134.56 4.14 1.54 5.908L0 24l6.233-1.632A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.02a9.97 9.97 0 01-5.09-1.398l-.356-.21-3.698.97.975-3.588-.212-.36A9.97 9.97 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.95-6.336c-.328-.164-1.942-.96-2.244-1.068-.302-.108-.522-.164-.742.164-.22.328-.852 1.068-.964 1.286-.112.218-.224.246-.552.082-.328-.164-1.382-.51-2.64-1.628-.976-.868-1.638-1.944-1.83-2.272-.192-.328-.02-.504.144-.668.148-.146.328-.328.492-.492.164-.164.22-.328.328-.548.108-.22.054-.41-.026-.574-.08-.164-.742-1.794-.964-2.46-.216-.65-.436-.546-.742-.558-.192-.008-.412-.008-.632-.008-.22 0-.576.082-.876.41-.3.328-1.148 1.12-1.148 2.732 0 1.612 1.176 3.168 1.34 3.388.164.22 2.316 3.548 5.618 4.972.792.354 1.408.566 1.888.724.792.262 1.512.226 2.08.138.636-.098 1.942-.794 2.216-1.562.274-.768.274-1.426.192-1.562-.082-.136-.302-.218-.63-.382z" />
                 </svg>
                 <a
-                  href="https://wa.me/+212600000000"
+                  href="https://wa.me/+212660446735"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
@@ -108,10 +108,10 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-red-500" />
                 <a
-                  href="mailto:contact@mounirweb.com"
+                  href="mailto:contactmounirweb@gmail.com"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  contact@mounirweb.com
+                  contactmounirweb@gmail.com
                 </a>
               </li>
             </ul>
