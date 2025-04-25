@@ -335,16 +335,16 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-700 my-16"></div>
 
       {/* About Section */}
-      <motion.section
+      {/* <motion.section
         id="about"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         className="px-6 lg:px-16"
-      >
-        <About />
-      </motion.section>
+      > */}
+      <About />
+      {/* </motion.section> */}
 
       {/* Separator */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-700 my-16"></div>
