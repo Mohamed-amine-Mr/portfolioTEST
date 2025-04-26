@@ -2,22 +2,18 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
-  Code2,
   ChevronLeft,
   ChevronRight,
   PlayCircle,
-  Quote,
-  Star,
-  Award,
-  ShieldCheck,
   MessageSquare,
   X,
 } from "lucide-react";
 import img1 from "./1.png";
-import img9 from "./9.png";
-import img10 from "./10.png";
 import img2 from "./2.png";
-import img3 from "./7.png";
+import img3 from "./3.png";
+import agency from "./agency.png";
+import podcast from "./podcast.png";
+import sushi from "./sushi.png";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -42,7 +38,7 @@ const Projects = () => {
       title: "Ecommerce Store",
       description:
         "Une boutique en ligne optimisée pour maximiser les ventes, avec une interface utilisateur moderne et responsive. Développée avec des composants React et stylisée avec Tailwind CSS pour une expérience utilisateur fluide.",
-      image: img9,
+      image: img2,
       category: "frontend",
       technologies: ["React", "Tailwind CSS"],
       liveUrl: "https://ecommerce-platform-mu.vercel.app/",
@@ -58,7 +54,7 @@ const Projects = () => {
       title: "Restaurant App",
       description:
         "Une application intuitive pour améliorer l’expérience client dans les restaurants, avec une gestion d’état fluide grâce à useState. Animations modernes réalisées avec Framer Motion pour un design attractif.",
-      image: img10,
+      image: img3,
       category: "frontend",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
       liveUrl: "https://aurum-gamma.vercel.app/",
@@ -67,6 +63,65 @@ const Projects = () => {
         "Animations fluides pour une expérience immersive",
         "Design responsive pour tous les écrans",
       ],
+    },
+    {
+      id: 3,
+      title: "Marketing Agency",
+      description:
+        "A digital marketing agency website designed to enhance online presence and achieve marketing goals through targeted campaigns and SEO optimization.",
+      image: agency,
+      liveUrl: "https://marketing-agency-sandy-xi.vercel.app/",
+      category: "frontend",
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Scroll",
+        "React Parallax Tilt",
+      ],
+      features: [
+        "Call-to-action optimisé pour les conversions",
+        "Design responsive et moderne",
+        "Chargement rapide pour une meilleure expérience utilisateur",
+        "Smooth scrolling navigation with React Scroll",
+        "Interactive 3D/4D animations using Framer Motion and React Parallax Tilt",
+      ],
+      whatIDid:
+        "Designed and developed a fully responsive marketing agency website with a focus on user engagement. Implemented smooth scrolling navigation using React Scroll, added 3D/4D animations with Framer Motion and React Parallax Tilt, and optimized performance for fast loading. Integrated Tailwind CSS for a modern, consistent design across all devices.",
+    },
+    {
+      id: 4,
+      title: "Sushi Restaurant",
+      description:
+        "A modern website for a sushi restaurant, showcasing the menu and encouraging online orders with an intuitive user experience.",
+      image: sushi,
+      liveUrl: "https://sushi-khouribga.vercel.app/",
+      category: "frontend",
+      technologies: ["React", "Tailwind CSS"],
+      features: [
+        "Call-to-action optimisé pour les conversions",
+        "Design responsive et moderne",
+        "Chargement rapide pour une meilleure expérience utilisateur",
+      ],
+      whatIDid:
+        "Built a responsive sushi restaurant website using React and Tailwind CSS. Focused on creating an intuitive user interface to showcase the menu and drive online orders, ensuring fast loading times and a seamless experience across devices.",
+    },
+    {
+      id: 5,
+      title: "Podcast Platform",
+      description:
+        "A podcast platform designed for users to explore and listen to episodes, featuring a clean and modern interface.",
+      image: podcast,
+      liveUrl: "https://podcast-khouribga.vercel.app/",
+      category: "frontend",
+      technologies: ["React", "Tailwind CSS"],
+      features: [
+        "Call-to-action optimisé pour les conversions",
+        "Design responsive et moderne",
+        "Chargement rapide pour une meilleure expérience utilisateur",
+      ],
+      whatIDid:
+        "Developed a podcast platform with React and Tailwind CSS, emphasizing a clean and modern design. Ensured the site is fully responsive and optimized for fast loading, providing users with an easy way to explore and listen to podcast episodes.",
     },
     {
       videoUrl: "https://www.youtube.com/@mounirweb1",
@@ -85,34 +140,6 @@ const Projects = () => {
         "Design responsive pour tous les appareils",
       ],
       wip: true,
-    },
-    {
-      id: 2,
-      title: "Client Portfolio Website",
-      description:
-        "Un site portfolio élégant conçu pour un client, mettant en valeur ses travaux avec un design minimaliste et moderne. Développé avec React et stylisé avec Tailwind CSS.",
-      image: img2,
-      category: "frontend",
-      technologies: ["React", "Tailwind CSS"],
-      features: [
-        "Design épuré et professionnel",
-        "Mise en page responsive",
-        "Navigation fluide et intuitive",
-      ],
-    },
-    {
-      id: 3,
-      title: "Business Landing Page",
-      description:
-        "Une landing page conçue pour une entreprise locale, visant à attirer de nouveaux clients avec un design attrayant et optimisé pour les conversions.",
-      image: img3,
-      category: "frontend",
-      technologies: ["React", "Tailwind CSS"],
-      features: [
-        "Call-to-action optimisé pour les conversions",
-        "Design responsive et moderne",
-        "Chargement rapide pour une meilleure expérience utilisateur",
-      ],
     },
   ];
 

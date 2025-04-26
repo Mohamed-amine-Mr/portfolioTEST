@@ -18,7 +18,6 @@ import About from "../About/About";
 import Projects from "../Projects/projects";
 import Reviews from "../reviews/Reviews";
 import Contact from "../Contact/Contact";
-import WhyHireMe from "../whyChoseMe/WhyHireMe.jsx";
 
 const Hero = () => {
   const scrollRef = useRef(null);
@@ -298,27 +297,6 @@ const Hero = () => {
       </section>
 
       {/* Testimonial */}
-      <section className="px-6 lg:px-16 pt-16">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="bg-white dark:bg-gray-800 dark:glassmorphism rounded-xl shadow-lg p-8 text-center border border-gray-100 dark:border-gray-700 hidden-element prose dark:prose-invert mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Quote className="w-8 h-8 text-primary-light dark:text-primary-dark mx-auto mb-4" />
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-              “MounirWeb a transformé notre présence en ligne avec un site
-              moderne et performant. Leur équipe est professionnelle et à
-              l’écoute !“
-            </p>
-            <p className="text-sm font-medium text-text-light dark:text-text-dark">
-              - Yahia
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <motion.section
@@ -335,17 +313,7 @@ const Hero = () => {
       {/* Separator */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-700 my-16"></div>
 
-      {/* About Section */}
-      {/* <motion.section
-        id="about"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="px-6 lg:px-16"
-      > */}
       <About />
-      {/* </motion.section> */}
 
       {/* Separator */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-700 my-16"></div>

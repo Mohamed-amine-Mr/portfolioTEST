@@ -25,37 +25,33 @@ const Reviews = () => {
 
   const reviews = [
     {
-      name: "Mariam",
-      company: "The Moroccan Kitchen",
+      name: "Mohamed",
+      company: "email",
       rating: 5,
-      date: "21 Août",
-      comment:
-        "Thank you so much for the achievement, you were wonderful and skilled, I recommend working with you and wish you success in your upcoming projects, more successes.",
+      date: "3 mois",
+      comment: "ناضي أخويا تبارك الله عليك",
     },
-    // يمكنك إضافة المزيد من التعليقات هنا
     {
-      name: "Ahmed",
-      company: "restaurant",
+      name: "Mohamed",
+      company: "khamsat",
       rating: 5,
-      date: "15 Septembre",
+      date: "2 mois",
       comment:
-        "Amazing work! The website you built for us is fast, responsive, and exactly what we needed. Highly recommend!",
+        "أشكرك جزيل الشكر على مرونتك وسرعة استجابتك. أقدر التزامك بتلبية المتطلبات وتوضيحك بشأن جودة العمل والمدة الزمنية.",
     },
     {
-      name: "ahmed",
-      company: "podcast loading page",
-      rating: 4,
-      date: "10 Octobre",
-      comment:
-        "Great experience working with MounirWeb. The project was delivered on time, and the design is stunning.",
+      name: "Client",
+      company: "Email",
+      rating: 5,
+      date: "10 days",
+      comment: "داكشي لخر هوا هداك الله يعطيك الصحة",
     },
     {
-      name: "Fatima",
-      company: "coffe Store",
-      rating: 4,
-      date: "10 Octobre",
-      comment:
-        "Great experience working with MounirWeb. The project was delivered on time, and the design is stunning.",
+      name: "The Moroccan Kitchen",
+      company: "Email",
+      rating: 5,
+      date: "18 Novembre",
+      comment: "سي محمد، خدمة نقية تبارك الله عليك !",
     },
   ];
 
