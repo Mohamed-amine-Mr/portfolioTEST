@@ -32,22 +32,22 @@ const Projects = () => {
   }, []);
 
   const projects = [
-    {
-      videoUrl: "https://www.youtube.com/@mounirweb1",
-      id: 9,
-      title: "Ecommerce Store",
-      description:
-        "Une boutique en ligne optimisée pour maximiser les ventes, avec une interface utilisateur moderne et responsive. Développée avec des composants React et stylisée avec Tailwind CSS pour une expérience utilisateur fluide.",
-      image: img2,
-      category: "frontend",
-      technologies: ["React", "Tailwind CSS"],
-      liveUrl: "https://ecommerce-platform-mu.vercel.app/",
-      features: [
-        "Navigation intuitive pour les utilisateurs",
-        "Design responsive adapté à tous les appareils",
-        "Performance optimisée pour des chargements rapides",
-      ],
-    },
+    // {
+    //   videoUrl: "https://www.youtube.com/@mounirweb1",
+    //   id: 9,
+    //   title: "Ecommerce Store",
+    //   description:
+    //     "Une boutique en ligne optimisée pour maximiser les ventes, avec une interface utilisateur moderne et responsive. Développée avec des composants React et stylisée avec Tailwind CSS pour une expérience utilisateur fluide.",
+    //   image: img2,
+    //   category: "frontend",
+    //   technologies: ["React", "Tailwind CSS"],
+    //   liveUrl: "https://ecommerce-platform-mu.vercel.app/",
+    //   features: [
+    //     "Navigation intuitive pour les utilisateurs",
+    //     "Design responsive adapté à tous les appareils",
+    //     "Performance optimisée pour des chargements rapides",
+    //   ],
+    // },
     {
       videoUrl: "https://www.youtube.com/@mounirweb1",
       id: 8,
@@ -123,24 +123,24 @@ const Projects = () => {
       whatIDid:
         "Developed a podcast platform with React and Tailwind CSS, emphasizing a clean and modern design. Ensured the site is fully responsive and optimized for fast loading, providing users with an easy way to explore and listen to podcast episodes.",
     },
-    {
-      videoUrl: "https://www.youtube.com/@mounirweb1",
-      id: 1,
-      title: "Fast React Pizza Co.",
-      description:
-        "Une plateforme de commande de pizzas avec navigation fluide grâce à React Router et gestion d’état avancée avec Redux Toolkit. Nous avons intégré des fonctionnalités comme le suivi des commandes et un panier interactif, le tout stylisé avec Tailwind CSS.",
-      image: img1,
-      category: "frontend",
-      technologies: ["React", "Redux Toolkit", "React Router", "Tailwind CSS"],
-      liveUrl: "https://fast-react-pizza-theta-orpin.vercel.app/",
-      features: [
-        "Menu interactif avec options de filtrage",
-        "Panier d’achat avec gestion de quantités",
-        "Suivi des commandes en temps réel",
-        "Design responsive pour tous les appareils",
-      ],
-      wip: true,
-    },
+    // {
+    //   videoUrl: "https://www.youtube.com/@mounirweb1",
+    //   id: 1,
+    //   title: "Fast React Pizza Co.",
+    //   description:
+    //     "Une plateforme de commande de pizzas avec navigation fluide grâce à React Router et gestion d’état avancée avec Redux Toolkit. Nous avons intégré des fonctionnalités comme le suivi des commandes et un panier interactif, le tout stylisé avec Tailwind CSS.",
+    //   image: img1,
+    //   category: "frontend",
+    //   technologies: ["React", "Redux Toolkit", "React Router", "Tailwind CSS"],
+    //   liveUrl: "https://fast-react-pizza-theta-orpin.vercel.app/",
+    //   features: [
+    //     "Menu interactif avec options de filtrage",
+    //     "Panier d’achat avec gestion de quantités",
+    //     "Suivi des commandes en temps réel",
+    //     "Design responsive pour tous les appareils",
+    //   ],
+    //   wip: true,
+    // },
   ];
 
   const containerVariants = {
